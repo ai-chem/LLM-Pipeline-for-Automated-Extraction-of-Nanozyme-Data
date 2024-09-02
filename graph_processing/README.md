@@ -13,6 +13,7 @@ pip install ultralytics torch pillow click
 2. Prepare your dataset:
    - Place your images in the following directory structure:
      
+     ```
      datasets/plots/
      ├── images/
      │   ├── train/
@@ -22,6 +23,7 @@ pip install ultralytics torch pillow click
          ├── train/
          ├── val/
          └── test/
+     ```
      
    - Ensure your labels are in YOLO format.
 
