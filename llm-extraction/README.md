@@ -1,0 +1,3 @@
+- `data` – prepare data for NER agent training 
+- `train` – finetune the LLM model for the NER task
+- `inference` – inference NER agent
