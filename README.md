@@ -17,7 +17,7 @@ This system processes scientific documents end-to-end, leveraging tools such as 
 
 ```bash
 git clone https://github.com/ai-chem/LLM-Pipeline-for-Automated-Extraction-of-Nanozyme-Data.git
-cd llm-for-nanozyme-activity-knowledge-distillation
+cd LLM-Pipeline-for-Automated-Extraction-of-Nanozyme-Data
 ```
 
 2. Install the required packages:
