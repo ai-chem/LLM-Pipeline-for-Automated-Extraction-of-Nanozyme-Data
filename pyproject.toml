@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "nanozyme"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.12"
+openai = "^1.30.0"
+langchain = "^0.1.20"
+elasticsearch = "^8.7.0"
+python-dotenv = "^1.0.0"
+beautifulsoup4 = "^4.12.2"
+lxml = "^4.9.2"
+tiktoken = "^0.7.0"
+fastapi = {extras = ["all"], version = "^0.95.1"}
+sentence-transformers = "^2.2.2"
+chromadb = "^0.5.0"
+torch = { version = "2.2.2", source = "torch-cuda-12-1" }
+torchvision = { version = "0.17.2", source = "torch-cuda-12-1" }
+# torch = "^2.2.2"
+playwright = "^1.39.0"
+streamlit = "1.28.2"
+unstructured = "^0.11.6"
+selenium = "^4.16.0"
+httplib2 = "^0.22.0"
+#python-magic-bin = "^0.4.14"
+numexpr = "^2.8.8"
+streamlit-feedback = "^0.1.3"
+langchain-community = "^0.0.38"
+langchain-openai = "^0.1.6"
+langchainhub = "^0.1.15"
+pdfplumber = "^0.11.0"
+fitz = "^0.0.1.dev2"
+pymupdf = "^1.24.5"
+llama-index-multi-modal-llms-openai = "^0.1.6"
+llama-index = "^0.10.44"
+ultralytics = "^8.2.56"
+
+[[tool.poetry.source]]
+name = "torch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[[tool.poetry.source]]
+name = "torch-cuda-12-1"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+
+[tool.poetry.group.dev.dependencies]
+notebook = "^6.5.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
