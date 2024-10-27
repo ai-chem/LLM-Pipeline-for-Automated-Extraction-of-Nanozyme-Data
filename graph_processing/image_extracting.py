@@ -105,7 +105,7 @@ def process_images_with_yolo(images, model_path):
 
 
 # Функция для анализа PDF и получения описаний
-def pdf_analysis(pdf_path, yolo_model_path):
+def pdf_analysis(pdf_path, yolo_model_path = None):
     image_pages = extract_image_pages(pdf_path)
     descriptions = {}
     images = []
@@ -114,9 +114,10 @@ def pdf_analysis(pdf_path, yolo_model_path):
         image = get_page_image(pdf_path, page_num)
         images.append(image)
 
-    processed_images = process_images_with_yolo(images, yolo_model_path=YOLO_PATH)
+    if yolo_model_path:
+        images = process_images_with_yolo(images, yolo_model_path=YOLO_PATH)
 
-    for i, cropped_images in enumerate(processed_images):
+    for i, cropped_images in enumerate(images):
         for image in cropped_images:
             description = analyze_image(image)
             descriptions[i] = description

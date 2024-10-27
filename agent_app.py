@@ -4,11 +4,11 @@ from tempfile import NamedTemporaryFile
 
 import streamlit as st
 from dotenv import load_dotenv
-from graph_processing.image_extracting_yolo import pdf_analysis
+from graph_processing.image_extracting import pdf_analysis
 from langchain.agents import AgentType, initialize_agent, tool
 from langchain.callbacks import StreamlitCallbackHandler
 from langchain_openai import ChatOpenAI
-from pdf2txt import extract_text_from_pdf
+from data_preproccessing.pdf2txt import extract_text_from_pdf
 
 from logger import LOGGER
 from utils import merge_dictionaries

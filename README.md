@@ -40,7 +40,7 @@ OPENAI_API_KEY=your_api_key_here
 1. Run the Streamlit app:
 
 ```bash
-streamlit run agent_app.py
+poetry run streamlit run agent_app.py
 ```
 
 2. Open the provided URL in your web browser.

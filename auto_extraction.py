@@ -8,7 +8,7 @@ import click
 from dotenv import load_dotenv
 from langchain.agents import AgentType, initialize_agent, tool
 from langchain_openai import ChatOpenAI
-from pdf2txt import extract_text_from_pdf
+from data_preproccessing.pdf2txt import extract_text_from_pdf
 from tqdm import tqdm
 
 from logger import LOGGER
