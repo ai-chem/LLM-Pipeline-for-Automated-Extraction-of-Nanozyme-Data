@@ -144,30 +144,31 @@ if files != [] and st.session_state["files"] != files:
         mistral_article_dict = {}
         mistral_si_dict = {}
 
-        with open(
-            f"./mistral_json/{article_name}_mistral.json", "r", encoding="utf-8"
-        ) as file:
-            mistral_article_dict = json.load(file)
+        if os.path.exists("./mistral_json"):
+            with open(
+                f"./mistral_json/{article_name}_mistral.json", "r", encoding="utf-8"
+            ) as file:
+                mistral_article_dict = json.load(file)
 
-        with open(
-            f"./mistral_json/{article_name}_si_mistral.json", "r", encoding="utf-8"
-        ) as file:
-            mistral_si_dict = json.load(file)
+            with open(
+                f"./mistral_json/{article_name}_si_mistral.json", "r", encoding="utf-8"
+            ) as file:
+                mistral_si_dict = json.load(file)
 
         mistral_dict = merge_dictionaries([mistral_article_dict, mistral_si_dict])
 
         llama_article_dict = {}
         llama_si_dict = {}
+        if os.path.exists("./llama_json"):
+            with open(
+                f"./llama_json/{article_name}_lama.json", "r", encoding="utf-8"
+            ) as file:
+                llama_article_dict = json.load(file)
 
-        with open(
-            f"./llama_json/{article_name}_lama.json", "r", encoding="utf-8"
-        ) as file:
-            llama_article_dict = json.load(file)
-
-        with open(
-            f"./llama_json/{article_name}_si_lama.json", "r", encoding="utf-8"
-        ) as file:
-            llama_si_dict = json.load(file)
+            with open(
+                f"./llama_json/{article_name}_si_lama.json", "r", encoding="utf-8"
+            ) as file:
+                llama_si_dict = json.load(file)
 
         llama_dict = merge_dictionaries([llama_article_dict, llama_si_dict])
 
@@ -180,7 +181,9 @@ if files != [] and st.session_state["files"] != files:
             + "\n```"
         )
 
-    tools = [get_full_text, analyze_images, llm_extractor]
+    tools = [get_full_text, analyze_images]
+    if os.path.exists("./llama_json") or os.path.exists("./mistral_json"):
+        tools.append(llm_extractor)
 
     agent_llm = ChatOpenAI(
         temperature=0,
